@@ -1,0 +1,97 @@
+
+<div *ngIf="show; then name else notShow"></div>
+
+<ng-template #name>
+    <div>
+        <div class="content_header" fxLayout="row wrap" layout-align="center center">
+            <div  fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
+                <mat-card>
+                    <mat-card-content>
+                        <b>COVID-19 Dashboard</b>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        <h2 style="text-align: center;">{{errorMsg}}</h2>
+        <div style="margin: 1rem;">
+            <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+                <div *ngFor="let card of cards" fxFlex="16.666667%" fxFlex.xs="100%" fxFlex.sm="33%">
+                    <mat-card class="mat-elevation-z4" style="background-color:{{card.clr}};height: 70px;">
+                        <mat-car-header class="header">
+                            <mat-card-title>{{card.head}}</mat-card-title>
+                        </mat-car-header>
+                        <mat-card-content>
+                            {{card.value}}
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin: 1rem;">
+            <div fxLayout="row wrap" fxLayoutGap="16px grid">
+                <div fxFlex="35%" fxFlex.xs="100%" fxFlex.sm="100%">
+                    <canvas id="myChart1" #myChart1 ></canvas>
+                </div>
+                <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="100%">
+                    <div style="text-align: center;">
+                        <h3>ＤＡＴＥ  ＲＡＮＧＥ</h3>
+                    </div>
+                    <div>
+                        <mat-form-field color="accent" appearance="fill" >
+                            <mat-label>Starting date</mat-label>
+                            <input matInput [matDatepicker]="picker1" (dateInput)="addEvent1($event)" [min]="minCalender" [max]="maxCalender">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1 color="primary"></mat-datepicker>
+                          </mat-form-field>
+                    </div>
+                    <div>
+                          <mat-form-field color="accent" appearance="fill">
+                            <mat-label>Ending date</mat-label>
+                            <input matInput [matDatepicker]="picker2" (dateInput)="addEvent2($event)" [min]="minCalender" [max]="maxCalender" >
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                          </mat-form-field>
+                          
+                    </div>
+                    <div>
+                        <button mat-raised-button color="primary" (click)="btnClick()">Reset</button>
+                    </div>
+                </div>
+                <div fxFlex="45%" fxFlex.xs="100%" fxFlex.sm="100%">
+                    <canvas id="myChart2" #myChart2></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #name2>
+    <p>Hello</p>
+</ng-template>
+
+
+
+
+<ng-template #notShow >
+    <div class="content_header" fxLayout="row wrap" layout-align="center center"  >
+        <div  fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%" class="error404c">
+            <mat-card>
+                <mat-card-content>
+                    <b >Currently</b>
+                </mat-card-content>
+                <mat-card-content>
+                    <b>API</b>
+                </mat-card-content>
+                <mat-card-content>
+                    <b >doesn't work</b>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</ng-template>
+   
+
+
+
+

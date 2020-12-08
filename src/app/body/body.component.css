@@ -1,0 +1,61 @@
+.content{
+    padding: 16px;
+    text-align: center;
+}
+
+.content_header{
+    padding: 16px;
+    text-align: center;
+}
+
+.content > mat-card{
+    width: 200px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+mat-card-title{
+    font-size: medium;
+}
+
+mat-card-content{
+    font-size: xx-large;
+}
+
+.divChart1{
+    height: 100px;
+}
+
+#divChart2{
+   
+    width: 1000px;
+    height: 500px;
+}
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+
+.center {
+    margin: auto;
+    padding: 10px;
+  }
+
+.error404{
+
+    padding: 20%;
+    text-align: center;
+    font-size: 30px;
+
+}
+.error404c{
+    padding: 20%;
+}
+
+
